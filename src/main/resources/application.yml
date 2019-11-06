@@ -1,0 +1,7 @@
+# application.yml文件中添加如下配置：
+spring:
+  datasource:
+    url: jdbc:mysql://cdb-5g94sqwc.cd.tencentcdb.com:10048/person?useUnicode=true&characterEncoding=utf8
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 2411811ss
