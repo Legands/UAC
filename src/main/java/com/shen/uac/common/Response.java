@@ -2,6 +2,8 @@ package com.shen.uac.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 /**
  * ClassName Response
@@ -12,10 +14,16 @@ import lombok.Data;
  **/
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Response<T> {
 	private Integer code;
 
-	private String response;
+	private String msg;
 
 	private T data;
+
+	public Response(Integer code, String msg){
+		this.code = code;
+		this.msg = msg;
+	}
 }
