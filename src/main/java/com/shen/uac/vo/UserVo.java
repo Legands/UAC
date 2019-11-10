@@ -2,7 +2,9 @@ package com.shen.uac.vo;
 
 import lombok.Data;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * ClassName UserVo
@@ -15,10 +17,20 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class UserVo {
 	@NotBlank
-	private String userName;
+	private String username;
 
 	@NotBlank
-	private String passWord;
+	private String password;
 
 	private String roleId;
+
+	private Byte status;
+
+	@NotNull
+	@Min(1)
+	private Integer pageNum;
+
+	@NotNull
+	@Min(0)
+	private Integer pageSize;
 }

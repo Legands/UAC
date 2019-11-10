@@ -45,11 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-				.authorizeRequests()//配置权限
+				.authorizeRequests()
+				.antMatchers ("/static/**").permitAll()//配置权限
 				.anyRequest().authenticated()//任意请求需要登录
 				.and()
 				.formLogin()//开启formLogin默认配置
-				.loginPage("/login/auth").permitAll()//请求时未登录跳转接口
+//				.loginPage("/login").permitAll()//请求时未登录跳转接口
 				.failureUrl("/login/fail")//用户密码错误跳转接口
 				.defaultSuccessUrl("/login/success",true)//登录成功跳转接口
 				.loginProcessingUrl("/login")//post登录接口，登录验证由系统实现
@@ -68,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 //	@Override
 //	public void configure(WebSecurity web) {
-////		web.ignoring ().antMatchers ("/static/**");
+//		web.ignoring ().antMatchers ("/static/**");
 //	}
 
 	@Override

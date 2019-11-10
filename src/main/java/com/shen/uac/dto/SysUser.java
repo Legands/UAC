@@ -1,5 +1,6 @@
 package com.shen.uac.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,8 +14,8 @@ import java.util.Date;
  * Version 1.0
  **/
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SysUser implements Serializable {
-
 	private Long id;
 	private String username;
 	private String password;
@@ -40,6 +41,6 @@ public class SysUser implements Serializable {
 	private Byte status;
 	private Date createDate;
 	private String createUser;
-	private String updateDate;
+	private Date updateDate;
 	private String updateUser;
 }

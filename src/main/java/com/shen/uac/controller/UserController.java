@@ -3,6 +3,7 @@ package com.shen.uac.controller;
 import com.shen.uac.common.Response;
 import com.shen.uac.common.UacException;
 import com.shen.uac.service.UserService;
+import com.shen.uac.vo.UserListVo;
 import com.shen.uac.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -49,12 +50,25 @@ public class UserController {
 	 */
 	@PostMapping("/register")
 	public Object register(@RequestBody @Validated UserVo vo, BindingResult br){
-		Response response = new Response ();
 		if (br.hasErrors ()){
 			return new UacException (1, br.getGlobalError ().toString ());
 		}
-		service.ajaxAddUser (response, vo);
-		return null;
+		return service.ajaxAddUser (vo);
+	}
+
+	/**
+	 * 用户分页查询接口
+	 * @param vo
+	 * @param br
+	 * @return
+	 */
+	@GetMapping("/list")
+	public Object listAll(@Validated UserListVo vo, BindingResult br){
+		if (br.hasErrors ()){
+			return new UacException (1, br.getGlobalError ().toString ());
+		}
+		Response response = new Response();
+		return service.list (response, vo);
 	}
 
 	/**

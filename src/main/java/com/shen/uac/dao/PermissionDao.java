@@ -9,7 +9,6 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 
 @Component
-@org.apache.ibatis.annotations.Mapper
 public interface PermissionDao extends Mapper<Permission> {
 
 	@Select ("SELECT * from Sys_permission ;")
