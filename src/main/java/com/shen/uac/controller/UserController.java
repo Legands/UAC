@@ -84,4 +84,10 @@ public class UserController {
 		response.setMsg (exist ? "用户已存在，不可创建" : "用户不存在，可以创建");
 		return response;
 	}
+
+	@GetMapping("/operate")
+	public Object operate(){
+		service.operate ();
+		return "成功";
+	}
 }

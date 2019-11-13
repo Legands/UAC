@@ -21,16 +21,4 @@ public class UserVo {
 
 	@NotBlank
 	private String password;
-
-	private String roleId;
-
-	private Byte status;
-
-	@NotNull
-	@Min(1)
-	private Integer pageNum;
-
-	@NotNull
-	@Min(0)
-	private Integer pageSize;
 }
