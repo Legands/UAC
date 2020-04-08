@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function login(){
+            $.ajax({
+                url : "/login" ,
+                type : 'post',
+                data : {
+                    username: $("#username").val(),
+                    password: $("#password").val(),
+                },
+                success : function(data) {
+                    alert(data);
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+<p>
+    <label>Username</label> <input id="username">
+</p>
+<p>
+    <label>Password</label> <input id="password">
+</p>
+<button οnclick="login()">Sign in</button>
+</body>
+</html>
