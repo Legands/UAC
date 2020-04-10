@@ -67,7 +67,7 @@ public class UserController {
 		if (br.hasErrors ()){
 			return new UacException (1, br.getGlobalError ().toString ());
 		}
-		Response response = new Response();
+		Response<Object> response = new Response<Object>();
 		return service.list (response, vo);
 	}
 
@@ -78,7 +78,7 @@ public class UserController {
 	 */
 	@GetMapping("/checkUsername")
 	public Object checkUsername(String username){
-		Response response = new Response ();
+		Response<?> response = new Response<Object> ();
 		boolean exist = service.isExist (username);
 		response.setCode (exist ? 1 : 0);
 		response.setMsg (exist ? "用户已存在，不可创建" : "用户不存在，可以创建");

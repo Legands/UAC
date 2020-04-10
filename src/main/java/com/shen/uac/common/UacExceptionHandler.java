@@ -20,9 +20,10 @@ public class UacExceptionHandler {
 	@ExceptionHandler(UacException.class)
 	@ResponseBody
 	public Object onUacException(UacException ex, HttpServletRequest req, HttpServletResponse resp){
-		return new Response (ex.getCode (), ex.getMessage ());
+		return new Response<Object> (ex.getCode (), ex.getMessage ());
 	}
 
+	@SuppressWarnings("rawtypes")
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
 	public Object onException(Exception ex, HttpServletRequest req, HttpServletResponse resp){

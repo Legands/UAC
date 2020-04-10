@@ -25,7 +25,7 @@ public class LoginController {
 
 	@GetMapping("/login/{status}")
 	public Object login(@PathVariable String status) {
-		Response response = new Response ();
+		Response<?> response = new Response<Object> ();
 		if("auth".equals(status)){
 			response.setCode (1);
 			response.setMsg ("没有登录");
