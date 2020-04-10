@@ -8,6 +8,10 @@ package com.shen.uac.common;
  * Version 1.0
  **/
 public class UacException extends RuntimeException {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final Integer code;
 
 	public UacException(int code, String message){

@@ -4,7 +4,6 @@ import lombok.Data;
 
 /**
  * ClassName Final
- * Description TODO
  * Author shaojun
  * Date 13/11/2019 11:51
  * Version 1.0
